@@ -12,7 +12,6 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "pessoa")
 public class Pessoa {
@@ -28,4 +27,9 @@ public class Pessoa {
 
     @OneToMany(mappedBy = "pessoa")
     private List<Endereco> enderecos = new ArrayList<>();
+
+    public Pessoa(String nome, String cpf){
+        this.nome = nome;
+        this.cpf = cpf;
+    }
 }
